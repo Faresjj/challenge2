@@ -43,17 +43,28 @@ What different attributes computers may have?
 Create two computers object from your factory function and save them in one array called computers!
 
 Note: please write one or two lines here describing your solution.
+// Creat the factory function for several computers attributes. Create the variables computers and store them in one variable named computers
 */
 
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
+  return {
+    type: type,
+    color: color,
+    weight: weight
+  };
 }
+var computer1 = makeComputer {type: "HP", color: "White", weight: "2Kg"};
+var computer2 = makeComputer {type: "Dell", color: "Black", weight: "1Kg"};
+
+var computers = [computer1, computer2];
+
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
-  // TODO: Your code here
+  return computer.type + ' ' + computer.color + ' ' + computer.weight;// TODO: Your code here
 }
+
 
 //=============================================================================
 /*                                  Q2                                       */
@@ -67,13 +78,19 @@ You can use toUpperCase method to convert a string to upper case.
 Solve it using the most appropriate helper functions(each,map,filter).
 
 Note: please write one or two lines here describing your solution.
+Create a function with map to check if the element is a string and then convert it to upper case.
 
 var strArr = ['hello', 'world', 'whirled', 'peas'];
 uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+  return map(array, function(element, i){
+    if(typeof(element) === 'string'){
+      return element.toUpperCase();
+    }
+    return element;
+  })
 }
 
 //=============================================================================
@@ -87,7 +104,7 @@ with only the countries that have a population higher than 500 million.
 Solve it using one of the most appropriate helperthe helpers functions(each,map,filter).
 
 highestPopulation(data); ==> [{country: "China", population: 1409517397},{country: "India", population: 1339180127}]
-Note: please write one or two lines here describing your solution.
+Note: We create with filter a function whose take an array and an object and then return only country with population of more than 500 millions 
 
 Here’s the data you’ll work with:
 */
@@ -112,8 +129,13 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+  return filter(array, function(obj){
+    return obj.population > 500000000 ;
+  })
 }
+
+  // TODO: your code here
+
 
 //=============================================================================
 /*                              Q4                                           */
